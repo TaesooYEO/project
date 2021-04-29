@@ -88,23 +88,24 @@ def depthFirstSearch(problem):
     """
     "*** YOUR CODE HERE ***"
     from util import Stack
-    fringe = Stack()
+    fringe = Stack()             
     fringe.push(problem.getStartState())
-    visited= []
-    path = []
-    pathToCurrent = Stack()
+    visited = []                   
+    path=[]                      
+    pathToCurrent=Stack()          
     currState = fringe.pop()
     while not problem.isGoalState(currState):
-    	if currState not in visited:
-    		visited.append(currState)
-    		successors = problem.getSuccessors(currState)
-    		for child,direction,cost in successors:
-    			fringe.push(child)
-    			tempPath = path + [direction]
-    			pathToCurrent.push(tempPath)
-    		currState = fringe.pop()
-    		path = pathToCurrent.pop()
-	return path    
+        if currState not in visited:
+            visited.append(currState)
+            successors = problem.getSuccessors(currState)
+            for child,direction,cost in successors:
+                fringe.push(child)
+                tempPath = path + [direction]
+                pathToCurrent.push(tempPath)
+        currState = fringe.pop()
+        path = pathToCurrent.pop()
+    return path
+ 
     #util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
