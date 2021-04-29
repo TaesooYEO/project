@@ -103,7 +103,7 @@ def depthFirstSearch(problem):
     			tempPath = path + [direction]
     			pathToCurrent.push(tempPath)
     		currState = fringe.pop()
-    		path = pathTOCurrent.pop()
+    		path = pathToCurrent.pop()
 	return path    
     #util.raiseNotDefined()
 
