@@ -112,12 +112,12 @@ def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
     from util import Queue
-    fringe = Queue()                           
+    fringe = Queue()                        # Fringe to manage which states to expand
     fringe.push(problem.getStartState())
-    visited = []                               
-    tempPath=[]                                
-    path=[]                                     
-    pathToCurrent=Queue()                  
+    visited = []                            # List to check whether state has already been visited
+    tempPath=[]                             # Temp variable to get intermediate paths
+    path=[]                                 # List to store final sequence of directions 
+    pathToCurrent=Queue()                   # Queue to store direction to children (currState and pathToCurrent go hand in hand)
     currState = fringe.pop()
     while not problem.isGoalState(currState):
         if currState not in visited:
@@ -129,8 +129,10 @@ def breadthFirstSearch(problem):
                 pathToCurrent.push(tempPath)
         currState = fringe.pop()
         path = pathToCurrent.pop()
+        
+    return path
     
-    #util.raiseNotDefined()
+     #util.raiseNotDefined()
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
