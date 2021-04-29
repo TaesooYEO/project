@@ -95,7 +95,7 @@ def depthFirstSearch(problem):
     pathToCurrent = Stack()
     currState = fringe.pop()
     while not problem.isGoalState(currState):
-    	if currSTate not in visited:
+    	if currState not in visited:
     		visited.append(currState)
     		successors = problem.getSuccessors(currState)
     		for child,direction,cost in successors:
