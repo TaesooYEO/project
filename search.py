@@ -106,7 +106,7 @@ def depthFirstSearch(problem):
         path = pathToCurrent.pop()
     return path
  
-    #util.raiseNotDefined()
+    #util.raiseNotDefined() ...
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
