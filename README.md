@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI 인공지능
 See Midterm and Final Project:
 https://sites.google.com/hanyang.ac.kr/2021ai
@@ -57,3 +58,6 @@ then, upload <MyName>.zip to LMS homework submission.
 
 
 
+=======
+# project
+>>>>>>> 5bb3aeda0f7dafed6f5c31545bc3618bdda687a6
