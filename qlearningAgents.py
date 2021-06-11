@@ -83,7 +83,19 @@ class QLearningAgent(ReinforcementAgent):
           you should return None.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        bestAction = [None]
+        legalActions = self.getLegalActions(state)
+        maxqvalue = -999999
+        for action in legalActions:
+            if self.getQValue(state,action) > maxqvalue:
+                maxqvalue = self.getQValue(state,action)
+                bestAction = [action]
+            elif self.getQValue(state,action) == maxqvalue:
+                bestAction.append(action)
+
+        return random.choice(bestAction)       
+        
+        #util.raiseNotDefined()
 
     def getAction(self, state):
         """
