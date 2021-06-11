@@ -83,8 +83,7 @@ class ValueIterationAgent(ValueEstimationAgent):
         for stateProb in transitionStatesProbs:
             value += stateProb[1] * (self.mdp.getReward(state, action, stateProb[0]) + self.discount * self.values[stateProb[0]]) 
         return value      
-           
-        #util.raiseNotDefined()
+ 
 
     def computeActionFromValues(self, state):
         """
@@ -106,7 +105,6 @@ class ValueIterationAgent(ValueEstimationAgent):
                 maxaction = action  
         return maxaction        
         
-        #util.raiseNotDefined()
 
     def getPolicy(self, state):
         return self.computeActionFromValues(state)
