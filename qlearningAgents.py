@@ -53,8 +53,6 @@ class QLearningAgent(ReinforcementAgent):
         """
         "*** YOUR CODE HERE ***"
         return self.qvalue[state,action]
-                
-        #util.raiseNotDefined()
 
 
     def computeValueFromQValues(self, state):
@@ -74,7 +72,6 @@ class QLearningAgent(ReinforcementAgent):
                 maxqvalue = self.getQValue(state,action)
         return maxqvalue  
                 
-        #util.raiseNotDefined()
 
     def computeActionFromQValues(self, state):
         """
@@ -95,7 +92,6 @@ class QLearningAgent(ReinforcementAgent):
 
         return random.choice(bestAction)       
         
-        #util.raiseNotDefined()
 
     def getAction(self, state):
         """
@@ -117,9 +113,6 @@ class QLearningAgent(ReinforcementAgent):
         else:
             return self.computeActionFromQValues(state)
 
-        #util.raiseNotDefined()
-
-        #return action
 
     def update(self, state, action, nextState, reward):
         """
@@ -134,8 +127,7 @@ class QLearningAgent(ReinforcementAgent):
         sample = reward + self.discount * self.computeValueFromQValues(nextState)
         key = state,action
         self.qvalue[key] = (1.0 - self.alpha) * self.getQValue(state,action) + self.alpha * sample        
-        
-        #util.raiseNotDefined()
+ 
 
     def getPolicy(self, state):
         return self.computeActionFromQValues(state)
